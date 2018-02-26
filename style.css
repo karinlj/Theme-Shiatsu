@@ -1,0 +1,1558 @@
+/*
+Theme Name: Theme Shiatsu 
+Author: Karin Ljunggren
+Author URI: http://karinljunggren.com/
+Description:  Theme for Shiatsurummet.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*---------------------------------------
+>>> TABLE OF CONTENTS:
+-----------------------------------------
+# Globals
+# Override Bootstrap's default container
+
+# Header and Menu
+# Pages general
+# Front page layout - Pict, Intro, Widget Image boxes, Reference section 
+
+# Page Banner layout
+
+# Treatment Pages - 2 columns - pics every other side
+
+# Enterprise Page - 1 column, 2 columns, Pdf section
+
+# About Page - 1 column for every post
+
+# Contact Page - 1 column for every post, Contact Form, social widget
+
+# Footer
+
+
+
+
+# Pages general layout
+# Two-columns-page layout
+
+# Media Queries
+-----------------------------------------*/
+
+/***************
+  Globals
+****************/
+
+body {
+    font-family: 'Open Sans', arial, sans-serif;
+    color: #555;
+    font-size: 14px;
+    width: 100%;
+    background-color: /*#f5f0e6;*/ /*#f5f0eb - ving*/  /*#ece6df;*/    /*#ededed;*/  /*#EEF1EF; isabelline */   #fcfcfc;
+}
+
+.content-container-full-width {
+    max-width: 1200px;
+    /*margin: 0 auto 3em auto;*/
+    margin: 0 auto;
+    background: #fff;
+}
+
+.custom-container {
+  
+}
+
+p {
+    line-height: 1.7em;
+    letter-spacing: 0.4px;
+}
+
+a {
+    color: /* #4aa3df; */
+    /*#0099ff ;*/
+    #46aab9;
+
+    font-size: 1em;
+}
+
+a:hover {
+    color: #009ccc;
+    text-decoration: none;
+}
+
+a:focus {
+    color: #009ccc;
+    text-decoration: none;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.to-the-right {
+    float: right;
+    margin-right: 5%;
+}
+
+.to-the-left {
+    float: left;
+    margin-left: 5%;
+}
+
+/*@font-face {
+        font-family: 'GeosansLightRegular';
+        src: url('fonts/geosanslight-webfont.eot');
+        src: url('fonts/geosanslight-webfont.eot?#iefix') format('embedded-opentype'),
+             url('fonts/geosanslight-webfont.woff') format('woff'),
+             url('fonts/geosanslight-webfont.ttf') format('truetype'),
+             url('fonts/geosanslight-webfont.svg#GeosansLightRegular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }*/
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-family: 'GeosansLight', 'Work Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    color:  #555;
+    letter-spacing:  0.8px;
+    padding: 5px 0 10px 0;
+    line-height: 1.3em;
+}
+
+h1 {
+    font-size: 3.4em;
+    letter-spacing: 1.2px;
+}
+
+h2 {
+    font-size: 2.3em;
+    font-weight: 600;
+    color:    /*#81c752;*/   /* #88a83e;*/ /* #6bc777;*/ /* #56b1bf;*/    #889438;  
+}
+
+h4 {
+    font-size: 1.6em;
+    color: #81c752;
+
+}
+
+h5 {
+    color: #555;
+    font-size: 18px;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*.extra-space p {
+    line-height: 2em;
+}
+
+.extra-space h2 {
+    line-height: 2em;
+}*/
+
+
+.extra-margin {
+    margin: 4em 0;
+}
+
+.extra-margin-bottom {
+    margin-bottom: 7em;
+}
+
+.extra-padding-bottom {
+    padding-bottom: 6em;
+}
+
+/*.extra-padding {
+    padding: 5em 0;
+}*/
+
+
+/*buttons*/
+
+a.button-link {
+    display: inline-block;
+    border: 1.5px solid #56b1bf;
+    background:  #fff;
+    color: #56b1bf;
+    padding: 15px 20px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 1s;
+    line-height: 13px;
+    
+    margin-top: 2em;
+}
+
+a.button-link:active, a.button-link:visited {
+    border: 1.5px solid #56b1bf;
+    background:  #fff;
+    color: #56b1bf;
+   text-decoration: none;
+}
+
+a.button-link:hover {
+     border: 1.5px solid #56b1bf;
+    background:  #56b1bf;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+/*@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}*/
+
+
+
+/*********************
+ Header and Menu 
+*********************/
+
+/* CSS for menu-3. Desktop menu with logo and Sign up button. Mobile menu sliding in from right - covering whole screen. Sub menus. Made with Flexbox */
+
+#header-new {
+    margin-top: 2em;
+  /*  margin-bottom: 1.5em;
+    border-bottom: 2px solid #bbc76b;
+    box-shadow: 0 0 5px #d9d9d9;*/
+
+    background-color: /* #fff;*/  #fcfcfc;
+    width: 100%;
+    z-index: 5;
+}
+
+/*Desktop view*/
+
+.nav-desktop {
+    background-color:  /* #fff;*/ #fcfcfc; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+   
+}
+
+.site-title {
+    padding: 0;
+    margin: 0;
+    padding-right: 25px;
+}
+
+.site-title a {
+    color: /*#50872c;*/  #778131;  
+    letter-spacing: 0;
+    font-size: 1.2em;
+    font-weight: 600;
+    font-family: 'GeosansLight', Arial, sans-serif;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-desktop ul {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    list-style: none;
+    display: none;
+}
+
+.nav-desktop ul li {
+    position: relative;
+}
+
+.nav-desktop ul li a {
+    display: block;
+    color: #111;
+    padding: 16px 13px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.4em;
+    cursor: pointer;
+    letter-spacing: -0.2px;
+    font-family: 'GeosansLight', Arial, sans-serif;
+}
+
+.nav-desktop ul li a:hover {
+    opacity: 0.8;
+}
+
+.nav-desktop ul li a:active,
+.nav-desktop ul li a:visited {
+    color: #111;
+}
+
+/*Wp:s klasser*/
+
+.nav-desktop ul li.current-menu-item > a {
+    color: #aab946;  
+}
+
+.nav-desktop ul li.menu-item-has-children ul {
+    /*funkar!!*/
+    position: absolute;
+    z-index: 10;
+    background-color: /*#fff;*/ #fcfcfc;
+    width: 170px;
+    padding-bottom: 3px;
+    margin-top: -10px;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.175);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    display: none;
+}
+
+/*togglar med jquery*/
+
+.nav-desktop ul li.menu-item-has-children ul.sub-menu-open {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .nav-desktop ul li.menu-item-has-children:hover ul {  
+             display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }*/
+
+.nav-desktop ul li.menu-item-has-children > a::after {
+    content: "\f107";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
+
+.nav-desktop ul li.menu-item-has-children li {
+    /*för att täcka med b-c - hover*/
+    width: 100%;
+}
+
+.nav-desktop ul li.menu-item-has-children li a {
+    padding: 2px 16px;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.nav-desktop ul li.menu-item-has-children li:hover a {
+    opacity: 0.8;
+}
+
+.booking-btn {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.booking-btn img {
+    width: 80%;
+    height: auto;
+
+    float: right;
+}
+
+.booking-btn ul li a {
+    padding: 0;
+}
+
+/*.signup ul li:last-of-type a {
+    background-color: #24b4db;
+    border-radius: 30px;
+    padding: 7px 20px;
+}*/
+
+.nav-desktop > .toggle {
+    font-size: 26px;
+    color: #111;
+    cursor: pointer;
+}
+
+/*Mobile view*/
+
+.nav-mobile {
+    clear: both;
+    position: /* absolute;*/
+    fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background: #689a32;  /*#555c23;*/ /*#fcfcfc;*/
+    opacity: 0.9;
+    padding: 0 10%;
+    padding-top: 60px;
+    text-align: left;
+
+    transform: translateX(100%);
+    transition: transform 0.6s ease;
+}
+
+.nav-mobile ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-mobile ul li a {
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 1.7em;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    font-weight: 600;
+    font-family: 'GeosansLight', Arial, sans-serif;
+}
+
+.nav-mobile ul li a:hover {
+    opacity: 0.7;
+}
+
+/*Wp:s klasser*/
+
+.nav-mobile ul li.menu-item-has-children ul {
+    position: static;
+    z-index: 10;
+    display: none;
+}
+
+/*togglar med jquery*/
+
+.nav-mobile ul li.menu-item-has-children ul.sub-menu-open {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-mobile ul li.menu-item-has-children > a::after {
+    content: "\f107";
+    font-family: FontAwesome;
+    margin-left: 5px;
+}
+
+.nav-mobile ul li.menu-item-has-children li {
+    /*för att täcka med b-c - hover*/
+    width: 100%;
+}
+
+.nav-mobile ul li.menu-item-has-children li a {
+    padding: 2px 16px 10px 16px;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 1.4em;
+    text-align: left;
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+.nav-mobile ul li.menu-item-has-children li:hover a {
+    opacity: 0.8;
+}
+
+.nav-mobile .signup ul li:last-of-type a {
+    margin-top: 0.5em;
+    text-align: left;
+}
+
+/*close button*/
+
+.nav-mobile > span.toggle {
+    position: absolute;
+    top: 35px;
+    right: 28px;
+    font-size: 46px;
+    margin-left: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/*toggle class with jquery*/
+
+.nav-mobile-open {
+    overflow-x: auto;
+    transform: translateX(0);
+}
+
+/*Menu for larger screen*/
+@media only screen and (min-width: /*768px*/ 900px ) {
+    .nav-desktop {
+        padding: 0px 5px;   /* padding: 5px 30px;*/
+
+        justify-content: flex-start;
+    }
+
+    .nav-links {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .nav-desktop ul {
+        display: flex;
+        align-items: center;
+    }
+
+    .signup {
+        justify-content: flex-end;
+    }
+
+    .nav-desktop > span.toggle {
+        display: none;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+}
+
+
+/*********************
+ Pages general layout
+**********************/
+
+/*
+* Widgets Link section
+*/
+
+.link-section {
+    padding: 1em 1em 3em 1em;
+}
+
+.link-box h2 {
+    display: none;
+}
+
+.link-box ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link-box ul li {
+    display: inline-block;
+    margin-bottom: 1.5em;   
+}
+
+.link-box ul li a {
+    display: block;
+    border: 1.5px solid #56b1bf;
+    padding: 13px 20px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 1s;
+    margin-right: 12px;
+    line-height: 14px;
+}
+
+
+.link-box ul li a:active {
+    text-decoration: none;
+}
+
+.link-box ul li a:hover {
+    background:  #56b1bf;
+    color: #fff;
+     text-decoration: none;
+}
+
+
+
+.subtext-white {
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.page-header {
+    padding: 2em 2em;
+    margin: 0;
+    background-color: #f9f9f9;
+    border: none;
+}
+
+.page-title {
+    font-family: ;
+    text-align: center;
+    margin-bottom: 0.8em;
+    font-size: 2em;
+    font-weight: 400;
+    /*ändrat från 600*/
+}
+
+.subtext {
+    text-align: center;
+    color: #787878;
+    font-size: 16px;
+}
+
+.page-main {
+    padding: 4em 1em;
+}
+
+.page-main h5 {
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.page-main p {
+    margin: 1.5em 0;
+    font-size: 1em;
+    color: #787878;
+}
+
+
+/*********************
+  Page Banner layout
+***********************/
+
+.page-layout-image.banner {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.page-title-white {
+    color: #fff;
+    font-weight: 400;
+    font-size: 4em;
+    letter-spacing: 2px;
+
+}
+
+
+/*********************
+ Front-page  
+*********************/
+
+/*Front-page-layout with big picture and centered text and button*/
+
+.front-page-layout.big {
+    height: 620px;
+    width: 100%;
+   /* display: flex;*/
+    /*justify-content: center;
+    align-items: center;*/
+}
+
+/*Front-page-layout with picture at the right and text at the left*/
+
+.front-page-layout {
+    height: 620px;
+    width: 100%;
+    background-color: #649933;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 10%;
+    padding-top: 80px;
+}
+
+.front-page-layout h1 {
+    color: #fff;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    line-height: 1;
+    font-size: 5em;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.front-page-layout p {
+    font-size: 28px;
+    margin-bottom: 50px;
+    color: #fff;
+    font-family: 'GeosansLight', 'Work Sans', sans-serif;
+}
+
+.bokadirekt {
+    border-radius: 3px;
+}
+
+.intro-text {
+    width: 70%;
+    margin: 2em auto;
+    padding: 4em 1em 2em 1em;
+}
+
+/*
+* Widgets Image-text-boxes section
+*/
+
+.image-text-boxes {
+    width: 85%;
+    margin: 2em auto;
+    padding: 4em 1em;
+    margin: 1em auto 4em auto;
+}
+
+.container-boxes {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-container {
+    padding-top: 3em;
+    padding-bottom: 0.5em;
+    margin: 10px 0;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    /*box-shadow: 0 1px 2px 0 #f2f2f2;*/
+}
+
+.card-container img {
+    width: 100%;
+    border-radius: 8px;
+    transition: 1s;
+    opacity: 1;
+}
+
+.card-container img:hover{
+   opacity: 0.8;
+}
+
+.image-box {
+    text-align: center;
+}
+
+.image-box .widgettitle {
+    font-size: 1.9em;
+    padding: 30px 0 0 0;
+}
+
+.image-box .textwidget {
+    padding: 5px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*.image-box .textwidget a {
+    padding: 6px 18px;
+    margin-top: 1em;
+}*/
+
+/*
+* References section Widget
+*/
+
+.references-section {
+    background-color: #c8e5ea;
+    padding: 3em 0;
+}
+
+.references-section h2 {
+    text-align: center;
+    color: #2a656f;
+    padding-bottom: 1em
+}
+
+.container-references {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.slides .slide::before {
+    font-family: FontAwesome;
+    content: "\f10e";
+}
+
+.references-box {
+    width: 100%;
+    background-color: #fff;
+    padding: 2em 3em;
+    border-radius: 8px;
+    margin-bottom: 4em;
+}
+
+.references-box::before {
+    font-family: FontAwesome;
+    content: "\f10e";
+}
+
+.references-box h4 {
+    color: #555;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.references-section .textwidget {
+    font-size: 1.1em;
+    font-style: italic;
+    font-family: serif;
+    line-height: 1.8em;
+}
+
+/*Front Page for larger screens*/
+@media only screen and (min-width: 768px) {
+    
+    .container-boxes {
+        flex-direction: row;
+    }
+
+    .image-box .textwidget {
+        justify-content: space-between;
+    }
+    
+    .card-container {
+        width: 31%;
+        padding-top: 0;
+    }
+    
+    .references-box {
+        width: 32%;
+    }
+
+    .references-section .textwidget {
+        font-size: 1.2em;
+    }
+}
+
+
+/*********************
+  Treatments page
+***********************/
+
+
+/*********************
+  Enterprise page
+***********************/
+
+.enterprise-parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.enterprise-text-fullwidth {
+    padding: 1em;
+}
+
+.enterprise-text-fullwidth h3 {
+    font-size: 1.8em;
+}
+
+
+/*.enterprise-text-fullwidth a {
+    margin-top: 1em;
+}*/
+
+.enterprise-text.text {
+    width: 70%;
+    padding: 1em;
+}
+
+.enterprise-text.image {
+    padding: 1em;
+}
+
+.pdf-section {
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    padding-bottom: 3em;
+}
+
+
+/*********************
+  About page
+***********************/
+
+.about-post-parent {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3em;
+}
+    
+.about-post-about {
+    padding: 1em;
+    width: 60%;
+}
+
+.about-post-products {
+    padding: 1em;
+    width: 30%;
+}
+
+.about-post-about img {
+    margin-top: 2em;
+}
+
+.about-post-products img {
+    margin-bottom: 2em;
+}
+
+.about-post-products a.button-link {
+   margin-top: 2em;
+}
+
+
+/*********************
+  Contact page
+***********************/
+
+.contact-social .social-list .fa {
+    background: #fff;
+    border: 1.5px solid #56b1bf;
+    color: #56b1bf;
+    
+    font-size: 17px;
+    width: 36px;
+    margin-bottom: 1em;
+}
+
+.contact-social .social-list .fa:hover {
+    opacity: 0.7;
+     background: #56b1bf;
+    color: #fff;
+     border: 1.5px solid #56b1bf;
+}
+
+.contact-page iframe {
+    max-width: 100%;
+}
+
+
+/*
+* Contact Form layout
+*/
+
+div.wpcf7 {
+    padding-top: 2em;
+}
+
+label {
+    width: 70%;
+    font-weight: 400;
+    font-size: 90%;
+    
+    margin: 0.5em 0;
+}
+
+label input,
+label textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    background-color: #567dbf;
+    color: #fff;
+    border: 1.5px solid #567dbf;
+    padding: 5px 12px;
+    transition: 1s;
+
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"]:hover {
+    background-color: #fff;
+    color: #567dbf;
+    border: 1.5px solid #567dbf;
+}
+
+/*  ???????
+.smw_center {
+    margin-left: 0.7em;
+}*/
+
+
+
+
+
+
+
+/*
+*Two-columns-page layout 
+*/
+
+.content-container {
+    margin: 4em auto 0 auto;
+}
+
+.two-columns {
+    max-width: 1100px;
+    margin: 4em auto 0 auto;
+    padding: 0 1em 3em 1em;
+    background: #fff;
+}
+
+.img-text-parent  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+.img-text-part.text {
+    width: 60%;
+    padding: 1em;
+}
+
+.img-text-part.img {
+    width: 40%;
+    padding: 1em;
+}
+
+ 
+.info-two-columns {       /*??????????*/
+    padding-bottom: 4em;
+    padding-top: 4em;
+}
+
+.box-padding {           /*??????????*/
+    padding: 1em 1em;
+}
+
+
+.container-middle {    /*??????????*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-part {
+    width: 55%;
+    padding-bottom: 2em;
+
+}
+
+.middle-part img {
+    width: 100%;
+    height: auto;
+    padding: 2em 8em;
+
+}
+
+
+
+
+
+/*testing my own gallery*/
+
+.image-gallery {
+    width: 100%;
+}
+
+.testing-content h3 {
+    width: 80%;
+    margin: 3em auto 1em auto;
+    text-align: center;
+}
+
+.testing-content h6 {
+    width: 80%;
+    margin: 3em auto;
+    text-align: center;
+}
+
+
+.testing-img {
+    float: left;
+    width: 25%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.testing-img:hover {
+    opacity: 0.5;
+    transition: 2s;
+}
+
+
+/*making a gallery in wp*/
+
+#gallery-1 dl.gallery-item {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#gallery-1 dt img {
+    border: none;
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+
+/***********
+ Footer
+ ***********/
+
+.footer-container {
+    height: auto;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer-parent-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1em;
+}
+
+.footer-parent {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+    text-align: center;
+}
+
+.footer-child {
+    padding: 0;
+    width: 100%;
+}
+
+.footer-bottom {
+    padding: 3em 10%;
+    background-color: #262626;
+    color: #999;
+    position: relative;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.to-top {
+    position: absolute;
+    right: 70px;
+    bottom: 50px;
+}
+
+.to-top::before {
+    font-family: FontAwesome;
+    content: "\f106 ";
+    font-size: 2.5em;
+    color: #56B1BF;
+}
+
+.to-top:hover {
+    opacity: 0.7;
+}
+
+.footer-bottom .footer-copy {
+    font-size: 80%;
+    text-align: center;
+}
+
+/* Styles for Widgets in Footer*/
+
+.footer-list {
+    margin-bottom: 1em;
+}
+
+.footer-list .bokadirekt {
+    border-radius: 3px;
+}
+
+.footer-list h4 {
+    font-weight: 600;
+    letter-spacing: 1.7px;
+    color: #56B1BF; 
+    font-size: 1.6em;
+}
+
+.footer-list p {
+    font-size: 0.95em;
+}
+
+.footer-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-list ul li {
+    padding-bottom: 0.7em;
+    display: inline;
+}
+
+.footer-list ul li a {
+    color: #fff;
+    font-size: 90%;
+}
+
+.footer-list ul li a:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+
+
+/*social list*/
+.social-list p {
+    font-size: 0.95em;
+}
+
+ul.social-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.social-list li {
+    padding-bottom: 0.7em;
+    display: inline;
+}
+
+.social-list ul li a {
+    color: #fff;
+    font-size: 90%;
+}
+
+.social-list ul li a:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
+.social-list .fa {
+    padding: 8px;
+    font-size: 23px;
+    width: 41px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    margin: 5px 2px;
+    margin-top: 1em;
+    transition: 1s;
+}
+
+.social-list .fa:hover {
+    background: #99a63f;
+}
+
+.social-list .fa-facebook {
+    color: #333;
+    background: #fff;
+}
+
+.social-list .fa-linkedin {
+    color: #333;
+    background: #fff;
+}
+
+.social-list .fa-instagram {
+    color: #333;
+    background: #fff;
+}
+
+/*Footer for larger screen*/
+@media only screen and (min-width: 768px) {
+    .footer-child {
+        width: 33%;
+        padding: 2em;
+    }
+    .footer-parent {
+        padding: 0 10% 2em 10%;
+    }
+}
+
+
+/**********Media Queries*********/
+
+@media (max-width: 992px) {
+   
+    .content-container {
+        width: 80%;
+    }
+
+    .intro-text {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .to-the-left {
+        float: none;
+        margin-left: 0;
+    }
+
+    .to-the-right {
+        float: none;
+        margin-right: 0;
+    }
+
+   /* .to-top {
+        padding-bottom: 1em;
+    }*/
+}
+
+@media and screen (max-width: 768px) {
+
+    .page-layout-image.banner {
+        height: 260px;
+        padding: 80px 0;
+    }
+
+    .front-page-layout.big {
+        height: 460px;
+    }
+
+    .front-page-layout h1 {
+        font-size: 3.6em;
+    }
+
+    .front-page-layout p {
+        font-size: 24px;
+    }
+
+    .intro-text {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .container {
+        padding-right: 1.5em;
+        padding-left: 1.5em;
+    }
+
+    .box {
+        margin-bottom: 4em;
+        margin-top: 4em;
+    }
+
+    .page-title-white {
+        font-size: 3em;
+    }
+
+    .page-header {
+        padding: 5em 2em 2em 2em;
+    }
+
+   
+    .box-features {
+        height: 220px;
+    }
+
+    .footer-bottom .footer-copy {
+        text-align: center;
+        font-size: 80%;
+    }
+
+    .box-padding {
+        padding: 1em;
+    }
+
+    /*testing*/
+    .testing-img {
+        width: 50%;
+    }
+
+    label {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .page-layout-image.banner {
+        height: 200px;
+        padding: 60px 0;
+    }
+
+    .page-title-white {
+        font-size: 2.6em;
+    }
+
+    .front-page-layout.big {
+        height: 360px;
+    }
+
+    .front-page-layout h1 {
+        font-size: 3.1em;
+        padding-bottom: 0;
+    }
+
+    .front-page-layout p {
+        margin-bottom: 30px;
+    }
+    
+    .text-center {
+        text-align: left;
+    }
+
+    p {
+        font-size: 95%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .content-container {
+        width: 90%;
+        margin: 4em auto;
+    }
+
+    .box-padding {
+        padding: 0;
+        padding-bottom: 5em;
+    }
+
+    .box-features {
+        height: 260px;
+    }
+
+
+    .box-padding img {
+        padding: 0em;
+    }
+
+    .footer-list {
+        padding: 1em
+    }
+    
+    .to-top {
+        display: none;
+    }
+
+}
+
+
+@media (min-width: 1210px) {
+    .container {
+        width: 90%;
+    }
+}
+
+
+/*
+* Widgets One-Image-boxes section
+
+.one-image-box {
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.one-image-box-container .one-image-box img {
+    display: block;  
+    max-height: 300px;
+    width: auto;
+    margin: 3em auto;
+} 
+*/
+
+
+/*image-big-overlay- Shiatsu 
+
+.container-big-pict-overlay {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-big-pict-overlay .image-big img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+
+    padding-top: 0;
+}
+
+.container-big-pict-overlay .big-pict-overlay-parent {
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 51, 51, 0.8);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+*/
+

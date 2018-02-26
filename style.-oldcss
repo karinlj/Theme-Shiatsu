@@ -1,0 +1,1551 @@
+/*
+Theme Name: Theme Shiatsu 
+Author: Karin Ljunggren
+Author URI: http://karinljunggren.com/
+Description:  Theme for Shiatsurummet.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+*/
+
+/*---------------------------------------
+>>> TABLE OF CONTENTS:
+-----------------------------------------
+# Globals
+# Override Bootstrap's default container
+
+# Header and Nav links
+# Front page layout
+# Reference section
+# Pdf section
+# Contact Form layout
+# Pages general layout
+# Two-columns-page layout
+# Three-columns-page layout
+# Footer
+# Media Queries
+-----------------------------------------*/
+/*
+ * Globals
+ */
+
+body {
+    font-family: 'Open Sans', arial, sans-serif;
+    color: #555;
+    font-size: 14px;
+    width: 100%;
+    /*background-color: yellow;*/
+    background-color: #fff;
+}
+
+.custom-container {
+    clear: both;  /*obs!!!*/
+}
+
+p {
+   line-height: 1.7em;
+    letter-spacing: 0.4px;
+}
+
+a {
+    color:/* #4aa3df; */ #0099ff ;
+    font-size: 1em;
+}
+
+a:hover {
+    color: #009ccc;
+    text-decoration: none;
+}
+
+a:focus {
+    color: #009ccc;
+    text-decoration: none;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.to-the-right {
+    float: right;
+    margin-right: 5%;
+}
+
+.to-the-left {
+    float: left;
+    margin-left: 5%;
+}
+
+/*@font-face {
+        font-family: 'GeosansLightRegular';
+        src: url('fonts/geosanslight-webfont.eot');
+        src: url('fonts/geosanslight-webfont.eot?#iefix') format('embedded-opentype'),
+             url('fonts/geosanslight-webfont.woff') format('woff'),
+             url('fonts/geosanslight-webfont.ttf') format('truetype'),
+             url('fonts/geosanslight-webfont.svg#GeosansLightRegular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }*/
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin-top: 0;
+  font-family:  'GeosansLight', 'Work Sans' , "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: /*#7dbf40;*/ /*#81c752;*/  #555;
+  letter-spacing: /*0.5px;*/ 0.8px;
+  padding: 5px 0; 
+    line-height: 1.5em;
+}
+
+/*
+font-family: 'Work Sans', sans-serif;
+font-family: 'Taviraj', serif;
+font-family: 'GeosansLight', sans-serif;
+*/
+
+
+h1 {
+    font-size: 3.4em;
+   /* text-transform: uppercase;*/
+    letter-spacing: 1.2px;
+    /*font-family: 'GeosansLight', sans-serif;*/
+}
+
+h2 {
+    font-size:  2em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    /*padding-bottom: 0.8em;*/
+    color: #81c752;
+}
+
+h4 {
+    font-size: 1.6em;
+    color: #81c752; 
+
+}
+
+h5 {
+    color: #555;
+    font-size: 18px;
+    
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.extra-space p {
+    line-height: 2em;
+}
+
+.extra-space h2 {
+    line-height: 2em;
+}
+
+
+.extra-margin {
+    margin: 4em 0;
+}
+
+.extra-margin-bottom {
+    margin-bottom: 7em;
+}
+
+.extra-padding-bottom {
+    padding-bottom: 6em;
+}
+
+/*.extra-padding {
+    padding: 5em 0;
+}*/
+
+
+/*buttons*/
+.btn {
+    font-family: Poppins, sans-serif;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    padding: 0 30px;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-rounded {
+    border-radius: 30px;
+}
+
+.btn-black {
+    background: #2b2c2d;
+    color: #fff;
+}
+
+.btn-black:hover{
+    background: #fff;
+    color: #2b2c2d;
+}
+
+.btn-white {
+    background: #fff;
+    color:#7BBF6A;
+}
+
+.btn-white:hover {
+    background: #7BBF6A;
+    color: #fff;
+}
+
+.btn-green {
+    background: #7BBF6A;
+    color: #fff;
+}
+
+.btn-green:hover {
+    background: #fff;
+    color: #7BBF6A;
+}
+
+.btn-border {
+    background: #fff;
+    color: #333;
+    border: 1px solid #999;
+}
+
+.btn-border:hover {
+    background: #fff;
+    color: #333;
+    border: none;
+}
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
+
+/*
+* Header and Nav 
+*/
+
+/*hamburger-nav*/
+
+#header-main {
+    
+    float: left;
+    width: 25%;
+   /* width: 100%;*/
+    height:  4.6em;
+    padding-left: 3%;
+    background-color: /*#f3f2f2;*/ transparent;
+
+   /* overflow: auto;*/
+     /*transparent*/
+    /*background-color: rgba(0,0,0,.5)*/
+    
+    /*box-shadow:  0 2px 10px 0 rgba(0,0,0,.1);*/
+}
+
+.logo {
+    float: left;
+    width: 25%;
+    padding: 0.4em 0 0 0;
+}
+
+.logo a {
+    color:   /*#81c752;*/  #50872c;
+    letter-spacing: 0;
+    font-size: 1.5em;
+    font-weight: 600;
+    font-family: 'GeosansLight', Arial, sans-serif;
+}
+
+ nav {
+      font-family: 'GeosansLight', Arial, sans-serif;
+     
+     float: right;    
+     width: 75%;
+     height: 4.6em;
+     text-align: right;
+     padding: 0 3% 0 0;
+     background-color: /*#f3f2f2;*/ transparent;  
+}
+
+
+ nav ul {
+    background-color: /*#f3f2f2;*/ transparent;
+    letter-spacing: 0.2px;
+    color:  #404040; 
+     margin: 0;
+     
+    /*transparent*/
+    /*background-color: rgba(0,0,0,.5)*/
+}
+
+ nav ul li a {
+    background-color: /*#f3f2f2;*/ transparent;
+    display: block;
+    padding: 2em 1.7em;
+    color: inherit;
+    font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+nav a:visited {
+    color:  rgba(0,0,0,.9);
+    text-decoration: none;
+    transition: all 150ms ease-in;
+}
+
+/*obs!!!!!*/
+nav .current-menu-item > a {
+    color: /*#7dbf40;*/  #81c752; /*#78aa22;*/
+    transition: all 150ms ease-in;
+}
+
+
+nav a:hover {
+    color:  #81c752;  /*#78aa22;*/
+
+    text-decoration: none;
+    transition: all 150ms ease-in;
+}
+
+
+nav ul li {
+    display: inline-block;
+    position: relative; /*obs!*/
+}
+
+/*för att få undermenyn att ploppa ut och ligga till vänster*/
+nav ul li ul {
+    display: none;
+    text-align: left; /*obs!*/
+}
+
+/*hover över li-element, undermenyn visas*/
+nav ul li:hover ul {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    top: 3.7em;
+    background-color: /*#f3f2f2;*/ #fff;
+
+    /*transparent*/
+    /*background-color: rgba(0,0,0,.5);*/
+    /* background-color: #404040; */
+}
+
+/*undermenyer under varann*/
+nav ul li ul li {
+    display: block;
+
+}
+
+/*höjd och hover-padding på undermenyerna*/
+nav ul li ul a {
+    padding:  0.6em 1.45em;
+    background-color: /*#f3f2f2; */ transparent;
+    letter-spacing: 1.6px;
+    font-size: 0.95em;
+    text-transform: lowercase;
+    font-weight: 600;
+}
+
+.handle {  /*hamburgaren*/
+    float: right;
+    width: 25%;
+    /*background-color: #404040;*/
+    text-align: right;
+    box-sizing: border-box;
+    padding: 0.7em 1em;
+    cursor: pointer;
+    display: none;  /*obs!!*/
+    color: #333;
+    font-size: 1.7em;
+    font-weight: 600;
+}
+
+
+/*
+Front-page styling
+*/
+
+/*Front-page-layout with big picture and centered text and button*/
+.front-page-layout.big {
+    height: 620px;
+    width: 100%;
+    padding: 200px 0px;
+    text-align: center;
+    
+    /*filter: brightness(80%);*/
+}
+
+/*Front-page-layout with picture at the right and text at the left*/
+.front-page-layout {
+    height: 620px;
+    width: 100%;
+    padding: 200px 0px;
+    text-align: center;
+    background-color:   #649933; /*green apple*/
+}
+
+.front-page-layout h1 {
+    color: #fff;
+    padding-bottom: 20px;
+    font-size: 4.6em;
+    /*text-transform: uppercase;*/
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.front-page-layout p {
+    font-size: 28px;
+    margin-bottom: 50px;
+    color: #fff;
+    font-family: 'GeosansLight', 'Work Sans', sans-serif;
+}
+    
+.bokadirekt {
+   border-radius: 3px;
+}
+
+.intro-text {
+    width: 70%;
+    margin: 0 auto;
+    padding: 3em 1em;
+    
+}
+
+/*
+*Page Banner styling
+*/
+
+.page-layout-image.banner {
+    height: 360px;
+    width: 100%;
+    padding: 130px 0;
+    text-align: center; 
+}
+
+.page-title-white {
+    color: #fff;
+    font-weight: 400;
+    font-size: 3.6em;
+    letter-spacing: 2px;
+  
+}
+
+
+/*
+*Enterprise page
+*/
+.btn-section {
+    padding: 1em 1em 1em 3em;
+/*
+    background-color: hotpink;
+*/
+}
+
+.btn-section .bokadirekt {
+    width: 120px;
+    height: 39px;
+    padding-left: 0;
+}
+
+
+
+/*
+* References section Widget
+*/
+.references-section {
+    background-color:   /* #d5ecc5;*/  /*#d8e6f3;*/   #d8edf3;
+    padding: 3em 0 0 0;
+    
+}
+
+.container-references {
+    width: 90%;
+    margin: 0 auto;
+    
+}
+
+.references-boxes {
+    margin-right: -2%;
+    overflow: hidden;
+    margin-bottom: 3em;
+}
+
+.references-box {
+    width: 31.3%;
+    float: left;
+    margin-right: 2%;
+    background-color: #f9f9f9;
+    padding: 3em;
+    border-radius: 10px;
+}
+
+.references-box h4 {
+   color: /*#5ba659;*/ #555;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.container-references h2 {
+   color:  /*#3673b0;*/   #2a7489;
+    font-size: 2em;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 3em;
+}
+
+.references-section .textwidget {
+    font-size: 1.1em;
+}
+
+
+/*
+* Widgets Image-boxes section
+*/
+
+.image-text-boxes {
+    text-align: center;
+    background: #f8f9fa;  
+    margin: 8em auto 3em auto;
+    width: 80%; 
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-box {
+    padding: 15px;
+}
+
+ .image-box img {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    border-radius: 4px;
+}
+
+.image-box .widgettitle {
+     font-size: 1.7em;
+    padding-bottom: 5px;
+    letter-spacing: 0.5px;
+        /*font-weight: 600;*/  
+}
+
+ /* {
+     font-size: 0.7em;
+
+}*/
+
+/*
+* Widgets Image-boxes section
+*/
+.image-boxes {
+    
+    margin: 3em auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 2em;
+    margin-right: -25px; 
+}
+
+.image-box-single {
+    padding-right: 25px;
+    float: left;
+    width: 33.3%;
+}
+
+.two-columns .image-box-single img {
+    border-radius: 0;
+    padding: 0;
+}
+
+/*
+* Widgets One-Image-boxes section
+*/
+
+.one-image-box-container {
+    
+}
+
+.one-image-box {
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.one-image-box-container .one-image-box img {
+    display: block;
+    /*max-width: 100%*/;
+    
+    max-height: 300px;
+    width: auto;
+    margin: 3em auto;
+}
+
+/*
+* Widgets Link section
+*/
+
+.link-box h2 {
+    padding-bottom: 0;
+}
+
+.link-box ul {
+    list-style: none;
+}
+
+/*
+* Widgets Text-boxes section
+*/
+
+/*.text-boxes {
+    text-align: center;
+    background: #fff;
+    margin: 1em auto 6em auto;
+    width: 100%;
+}
+
+.text-box-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.text-box {
+    padding: 5em;
+    float: left;
+    width: 50%;
+    color: #fff;
+    background-color:  #4f8cc9;
+    opacity: 1;
+}
+
+.text-box:last-of-type {
+    background-color:  #6399cf;
+}
+
+.text-box:hover {
+    opacity: 0.8;
+    transition: 1.5s ease-in-out;
+}
+
+.text-box .widgettitle {
+    font-size: 2em !important;
+    margin-bottom: 20px;
+    font-weight: 600; 
+    color: #fff;
+}
+
+.text-box a {
+    color: #fff;
+}
+
+.text-box a:hover {
+    color: #1e4062;
+}*/
+
+
+/*
+* Pdf section
+*/
+
+/*.pdf-section {
+    padding: 3em 0;
+    background-color: #ff8533;
+    text-align: center;
+}
+.pdf-section h3 a {
+    color: #fff;
+}*/
+
+
+
+/*
+* Contact Form layout
+*/
+
+.contact-page iframe{
+   max-width: 100%;
+}
+
+div.wpcf7 {
+    padding-top: 2em;
+}
+
+label {
+    width: 70%;
+    /*font-family: Geo sans light;*/
+    font-weight: 400;
+    font-size: 90%;
+}
+
+label input, label textarea {
+    width: 100%;
+        border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    background-color: #0073e6;
+    color: #fff;
+    border: 1px solid #0073e6;
+    padding: 5px 12px;
+
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"]:hover {
+    background-color: #fff;
+    color: #0073e6;
+}
+
+
+/*
+*Pages general layout
+*/
+
+
+
+.smw_center {
+    margin-left: 0.7em;
+}
+
+
+
+
+.subtext-white {
+   text-align: center;
+    color: #fff;
+    font-size: 16px;
+}
+
+.page-header {
+    padding: 2em 2em;
+    margin: 0;
+    background-color: #f9f9f9;
+    border: none;
+}
+
+.page-title {
+    font-family: ;
+    text-align: center;
+    margin-bottom: 0.8em;
+    font-size: 2em;
+    font-weight: 400; /*ändrat från 600*/
+}
+
+.subtext {
+   text-align: center;
+    color: #787878;
+    font-size: 16px;
+}
+
+.page-main {
+    padding: 4em 1em;
+}
+
+.page-main h5 {
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.page-main p {
+    margin: 1.5em 0;
+    font-size: 1em;
+    color: #787878;
+}
+
+
+/*widgets*/
+
+
+.boxes {
+    text-align: center;
+    background: #fff;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-bottom: 1px solid #ececec !important;
+}
+
+.boxes .box .fa {
+    font-size: 45px !important;
+    margin-bottom: 25px;
+    color: #4aa3df;
+}
+
+.box h3 {
+    font-size: 1.3em !important;
+    margin-bottom: 20px;
+    font-weight: 600;   
+}
+
+.box {
+    padding: 15px;
+}
+
+
+/*
+*Two-columns-page layout 
+*/ 
+
+.content-container {
+    width: 70%;
+    margin: 4em auto;
+    padding: 1em;
+}
+
+.two-columns img {
+    padding-top: 3em;
+}
+
+.two-columns h2 {
+    font-weight: 600;  
+    color:   #81c752;
+
+
+
+
+}
+
+.two-columns h4 {
+    padding: 1em 0;
+    line-height: 1.5em;
+}
+
+.two-columns ul li {
+    line-height: 1.8em;
+}
+
+/*
+*Three-columns-page layout 
+*/ 
+
+.content-container-full-width{
+    width: 90%;
+    margin: 4em auto;
+    padding: 1em;
+}
+
+.three-columns h2 {
+    color:   #72c13e;
+
+    font-weight: 600;
+}
+
+.three-columns img {
+    width: 80%;
+    padding-left: 2em;
+}
+
+.box-padding-three {
+    padding: 1.5em 1em;
+}
+
+.three-columns .fa  {
+   color: #ff5050;
+   padding-right: 5px;
+}
+
+.three-columns .fa:hover  {
+   color: #ff9999;
+}
+
+
+/*testing my own gallery*/
+
+.image-gallery {
+    width: 100%;
+}
+
+.testing-content h3{
+    width: 80%;
+    margin: 3em auto 1em auto;
+    text-align: center;
+}
+
+.testing-content h6{
+    width: 80%;
+    margin: 3em auto;
+    text-align: center;
+}
+
+
+.testing-img  {
+    float: left;
+    width: 25%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+.testing-img:hover {    
+    opacity: 0.5;
+    transition: 2s;
+}
+
+
+/*making a gallery in wp*/
+#gallery-1 dl.gallery-item {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#gallery-1 dt img {
+     border: none;
+   width: 100%;
+    height: auto;
+}
+
+/*testing*/
+#about.left-box {            
+    float: left;
+    width: 50%;
+    height: auto;
+}
+
+/*testing*/
+#about.left-box h2 {            
+/*
+    font-size: 1.8em;
+*/
+}
+
+/*testing*/
+.img-text {          
+   padding: 10% 10% 0 10%;
+}
+
+/*testing*/
+#about img {            
+    width: 100%;
+    height: auto;
+}
+
+.two-columns-page  {
+    padding-bottom: 0px;
+    line-height: 1.8em;
+}
+
+.two-columns-page h3 {
+    font-size: 1.4em !important;
+    margin-bottom: 22px;
+    font-weight: 600;
+}
+
+ .grey {
+    background-color: /*#f2f2f2;*/ /*#f8f9fa; */ /*#f3f5f0;*/ #f9f9f9;
+
+}
+
+.info-field {
+    padding: 1em 3em;
+    
+    /*border-bottom: 1px solid #e6e6e6;*/
+}
+
+.info-field:last-of-type  {
+    border: none;
+}
+
+.info-two-columns {
+    padding-bottom: 4em;
+    padding-top: 4em;
+}
+
+.box-padding {
+    padding: 1em 1em;
+}
+
+.nextpage {
+    float: right;
+    font-size: 1.2em;
+    margin-top: -2em;
+}
+
+/*.text-border {
+    border-left: 1.6px solid #EAD001;
+    padding-left: 2em;
+}
+
+.text-border-right {
+    border-right: 1.6px solid #EAD001;
+    padding-right: 2em;
+}*/
+
+/*
+ * Footer
+ */
+
+/*.body {
+  background-color: #333333;
+}*/
+
+.blog-footer {
+  padding: 1em 0;
+  color: #f3f2f2;
+  text-align: center;
+  background-color: #434242;
+}
+
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-top {
+    padding: 4em 1em;
+}
+
+
+.to-top {
+    color: #c0bfbf;
+     font-size: 80%;
+    margin-right: 0;
+}
+
+.to-top:hover {
+        opacity: 0.7;
+}
+.to-top-btn {
+    /*display: none;*/  /* Hidden by default */
+   /* position: fixed;   
+    bottom: 100px;  
+    right: 50px;   */
+    /*z-index: 99;*/    /* Make sure it does not overlap */
+    border: none;   /* Remove borders */
+    outline: none;   /* Remove outline */
+    background-color: #595959;  
+    font-size: 20px;
+    cursor: pointer; 
+    padding: 8px 16px; 
+    border-radius: 50%;
+    margin-right: 0;
+    color: #c0bfbf;
+    
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+.to-top-btn:hover {
+        opacity: 0.7;
+}
+
+.footer-bottom {
+    padding: 1em 1em 0.5em 1em;
+    border-top: 1px solid #5a5858;
+}
+
+.footer-bottom .footer-copy {
+    text-align: center;
+    font-size: 80%;
+    color: #c0bfbf;
+}
+
+
+/* Styles for Widgets in Footer*/
+
+
+.footer-list {
+    text-align: center;
+    padding: 1em 0;
+}
+
+
+.footer-list .bokadirekt {
+    margin-top: 1em;
+    border-radius: 3px;
+} 
+.footer-list h4 {
+    font-weight: 600;
+    letter-spacing: 1px;
+    color:    #a6d785;
+}
+
+.footer-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-list ul li {
+    padding-bottom: 0.7em;
+    display: inline;
+}
+
+.footer-list ul li a {
+    color: #787878;
+    font-size: 90%;
+}
+
+.footer-list ul li a:hover {
+    color: #4aa3df;
+    text-decoration: none;
+}
+
+.footer-list .fa {
+    padding: 8px;
+    font-size: 23px;
+    width: 42px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    margin: 5px 2px;
+    margin-top: 1em;
+}
+
+.footer-list .fa:hover {
+    opacity: 0.7;
+}
+
+.footer-list .fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.footer-list .fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.footer-list .fa-instagram {
+    background: /*#ea4c89;*/  #ff6666;
+    color: white;
+}
+
+
+
+
+
+/**********Media Queries*********/
+@media (max-width: 992px) {  /* 960px*/
+    
+    
+     .content-container {
+        width: 80%;
+    }
+    
+    .content-container-full-width {
+        width: 80%;
+    }
+    
+    nav ul li a {
+        padding: 2.2em 0.9em;
+    }
+    
+     .logo a {
+        font-size: 1.15em;
+    }
+    
+    
+    /*testing*/
+    .img-text {          
+       padding: 15% 3em 0em 3em;
+    }
+    
+    .image-boxes {
+        margin: 4em auto 3em auto;
+        width: 100%; 
+    }
+    
+    .image-box .textwidget {
+        padding: 0 20%;
+        margin-bottom: 3em;
+    }
+    
+    .intro-text {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    /*.box-padding img {
+        padding: 0 5em;
+    }*/
+    
+    .two-columns img {
+        margin: 0;
+        padding-top: 2em;
+    }
+    
+    .three-columns img {
+        width: 50%;
+        padding-left: 0;
+        padding-bottom: 3em;
+    }
+    
+    .to-the-left {
+        float: none;
+        margin-left: 0;
+
+    }
+    
+    .to-the-right {
+        float: none;
+        margin-right: 0;
+
+    }
+    
+    .to-top {
+        padding-bottom: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .page-layout-image.banner {
+        height: 260px;
+        padding: 80px 0;
+    }
+    
+    .front-page-layout.big {
+         height: 460px;
+        padding: 140px 0;
+    }
+    
+    .front-page-layout h1 {
+        font-size: 3.6em;
+    }
+    
+    .front-page-layout p {
+        font-size: 24px;
+    }
+    
+    .intro-text {
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    /*.content-container {
+        width: 80%;
+        margin: 3em auto;
+    }*/
+    
+     #header-main { 
+        width: 100%;
+        float: none;  
+    }
+    
+   .logo {
+        width: 75%;
+       
+       /*position: relative;*/
+    }
+    
+    .handle {
+        display: block;
+    }
+    
+     /*klass satt med jQuery*/
+    .nav-expanded {
+        display: block;
+    }
+    
+    nav {
+        display: none;
+        clear: both;
+        float: left;
+        width: 100%;
+        text-align: left;
+        padding: 1em 1em 0 1em;
+        height: 340px;
+    }
+
+     nav ul {
+        padding: 0;
+    }
+   
+    nav ul li {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #e7e4e4;
+        /*border-bottom: 1px solid #555;*/
+        /*background-color: #404040;*/
+    }
+    
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+   
+     nav ul li a {
+        padding: 1.5em 1.4em;
+         font-size: 0.9em;
+    }
+     
+    /*undermenyn skall displayas block*/
+    nav ul li ul {
+        display: block;
+        box-shadow: none;
+    }
+    
+    nav ul li:hover ul {
+        position: relative;
+        top:0;
+    }
+   
+    nav ul li ul a {
+        padding: 1.1em 1.5em;
+        /*font-weight: 400;*/
+    }
+    
+    
+    .container {
+        padding-right: 1.5em;
+        padding-left: 1.5em;
+    }
+    
+    .box {
+        margin-bottom: 4em;
+        margin-top: 4em;
+    }
+    
+    .page-title-white {
+        font-size: 3em;
+    }
+    
+    .page-header {
+        padding: 5em 2em 2em 2em;
+    }
+    
+    .image-box .textwidget {
+        padding: 0 10%;
+    }
+    
+    .image-box-single {
+        width: 80%;
+        padding: 25px 0;
+    }
+    
+    .two-columns .image-box-single img {
+       float: left;
+    }
+    
+    .container-references {
+        width: 80%;
+        margin: 1em  auto 0 auto;
+    }
+    .references-boxes {
+        margin-bottom: 0em;
+        margin-right: 0;
+    }
+    
+    .references-box {
+        float: none;
+        padding: 2em;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 2.5em;
+    }
+    
+    
+     .box-features {
+        height: 220px;
+    }
+    
+    .client-info-field h3 {
+        margin-top: 3em;
+    } 
+    
+    .two-columns-page iframe {
+        margin-top:  0em;
+        margin-left: 0em;
+    }
+    
+   
+    .blog-footer img {
+        margin-bottom: 3em;
+    }
+    
+    .footer-bottom .footer-copy {
+        text-align: center;
+        font-size: 80%;
+    }
+
+    .footer-bottom .footer-social {
+        text-align: center;
+    }
+    
+    .box-padding {
+        padding: 1em;
+    }
+    
+    
+    /*testing*/
+    #about.left-box {            
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 3em;
+    }
+    
+        /*testing*/
+    .testing-img {
+        width: 50%;
+    }
+    
+    .two-columns img {
+        padding: 1em;
+    }
+    
+     
+    label {
+        width: 90%;
+    }
+    
+    .three-columns img {
+        width: 70%;
+    }
+    
+    
+}
+
+@media (max-width: 480px) {
+    
+   .page-layout-image.banner {
+        height: 200px;
+       padding: 60px 0;
+    }
+    
+    .page-title-white {
+        font-size: 2.6em;
+    }
+    
+     .front-page-layout.big {
+         height: 360px;
+        padding: 100px 0;
+    }
+    
+    .front-page-layout h1 {
+        font-size: 3.1em;
+        padding-bottom: 0;
+    }
+    
+    .front-page-layout p {
+        margin-bottom: 30px;
+    }
+    
+    #header-main { 
+        height: 4.6em;
+    }
+   
+    .text-center {
+        text-align: left;
+    }
+    
+    .handle {
+        font-size: 1.5em;
+    }
+    
+    p {
+        font-size: 95%;
+    }
+    
+    h2 {
+       font-size: 1.8em;  
+    }
+    
+    .content-container {
+        width: 90%;
+        margin: 4em auto;
+    }
+    
+     .content-container-full-width {
+        width: 90%;
+    }
+    
+    .info-field {
+        padding: 1em;
+       /* border-bottom: 1px solid #e6e6e6;*/
+    }
+   
+    .box-padding {
+        padding: 0;
+        padding-bottom: 5em;
+    }
+ 
+    .box-padding-three {
+        padding: 1em 0;
+    }
+    
+     .box-features {
+        height: 260px;
+    }
+    
+    /*testing*/
+     .testing-img {
+        float: none;
+        width: 100%;
+    }
+    
+    /*.box-align {*/
+/*
+        margin-top: 0em;
+*/
+       /* margin-bottom: 4em;
+        padding: 0;
+    }*/
+    
+    
+     .image-boxes {
+        margin-bottom: 0;
+    }
+    
+    .image-box  {
+        padding: 10px 5px;
+    }
+    
+    .image-text-boxes {
+        margin: 3em auto 3em auto
+    }
+    
+    .image-box .textwidget {
+        padding: 0;
+        margin-bottom: 5em;
+    }
+    
+    
+    .box-padding img {
+        padding: 0em;
+    }
+    
+    .page-header-green {
+        margin: 0 2em;
+    }
+    
+    .footer-list {
+        padding: 1em
+    }
+    
+}
+
+
+@media (min-width: 768px) {
+     
+}
+
+@media (min-width: 1210px){
+    .container {
+        width: 90%;
+    }
+}
