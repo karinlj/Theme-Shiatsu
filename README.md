@@ -1,3 +1,17 @@
-The website for Shiatsurummet made by Karin.
-=========================
-Custom WordPress theme for Shiatsurummet 2018
+# Theme Shiatsu
+
+## Description
+Custom WordPress theme for shiatsu massage studio [Shiatsurummet](https://shiatsurummet.se/)
+
+## Built With
+* WordPress
+* Bootstrap 3
+
+## Author
+* **Karin Ljunggren** - [karinlj](https://github.com/karinlj)
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+
+
