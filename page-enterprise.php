@@ -6,8 +6,6 @@
 ?>
 <?php get_header(); ?>
     <div class="custom-container">
-
-     
                <!--Section with customized large banner image-->
                            <?php $one = get_theme_mod('page-layout-display');?>
 
@@ -21,11 +19,9 @@
                                         </h1>-->
                                         
                                          <h1 class="page-title-white">
-                                                <?php $title = get_the_title();  echo $title; ?>
+                                                <?php $title = get_the_title();  echo esc_html($title); ?>
                                         </h1> 
-
                                    </div>
-                                   
                               </section>
         
                             <?php } ?>
@@ -33,14 +29,17 @@
                             <?php if ( $one == 'No')   { ?>
 
                                 <section class="page-layout-none">
+                                   <h1 class="page-title-white small">
+                                                <?php $title = get_the_title();  echo esc_html($title); ?>
+                                    </h1> 
 
                                 </section>
                             <?php } ?> 
         
     
 
-       <!--Section for pages with tree columns-->
-      <section class="two-columns">
+               <!--Section for pages with 2 columns-->
+              <section class="two-columns">
 
                          <?php  $args = array(
                                    'post_type' => 'enterprise-posts',
@@ -58,11 +57,19 @@
 
                                 <?php if ($i % 2 == 1) { //variabeln /2 ska INTE gå jämnt upp ?>
 
-                                        <div class="enterprise-text-fullwidth" >
+                                        <div class="enterprise-text text" >
 
                                             <h2><?php the_title(); ?></h2>
                                             <p><?php the_content(); ?></p>
                                         </div>
+                                
+                                
+                                        <div class="aside-box" >
+
+                                            <?php get_template_part('parts/aside-box-section'); ?>
+
+                                       </div>
+                                
 
                                 <?php   } ?>
 
@@ -97,27 +104,10 @@
                         wp_reset_postdata();
                     ?> 
 
-             
-                               <!--get button-section.php-->
-                        <?php get_template_part('inc/button-section'); ?>
-             
-                            <!--get  pdf-section.php-->
-                        <?php get_template_part('inc/pdf-section'); ?>
-             
-            
+                        <?php get_template_part('parts/pdf-section'); ?>
              
             </section>
         
-            <!--<section class="one-image-box-container">
-                 <div class="info-field">
-                        
-                        <?php //get_template_part('parts/one-image-box'); ?>
-                        
-                </div>
-                
-                
-            </section>-->
-
 </div><!-- /.custom-container -->
 
     <?php get_footer(); ?>

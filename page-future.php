@@ -1,51 +1,39 @@
 <?php
 /*
-* Template Name: Page Treatments 
-* Description: Template for Treatments with two columns with featured image
+* Template Name: Page Future Page 
+* Description: Template for Future Page with two columns with featured image
 */
 ?>
 <?php get_header(); ?>
 
     <div class="custom-container">
-          
-               <!--get custom category from URL-->
-                  <!--  benny-->
-                    <?php $custom_cat = $_GET['treatment-category']; //defined in functions.php
-                    ?>
-                   
-                    <!-- get custom category name from slug-->
-                    <?php  $cat_term = get_term_by('slug', $custom_cat, 'treatment-category'); 
-                           $cat_name = $cat_term->name; ?>
-                    
-        
+                          
                           <!--Section with customized large banner image-->
-                           <?php $one = get_theme_mod('page-layout-display');?>
+                           <?php $one = get_theme_mod('future-page-layout-display');?>
         
 
                             <!--If user wants to display Image-->
                             <?php if ( $one == 'Yes') { ?>
 
-                               <section class="page-layout-image banner">
+                               <section class="future-page-layout-image banner">
                                     <div class="container">
                                         
-                                       <!-- <h1><?php echo get_theme_mod('front-page-layout-heading'); ?>
+                                       <!-- <h1><?php echo get_theme_mod('future-page-layout-heading'); ?>
                                         </h1>-->
                                         
                                          <h1 class="page-title-white">
-                                                <?php  echo $cat_name ?>
+                                                <?php $title = get_the_title();  echo esc_html($title); ?>
                                         </h1> 
-
                                    </div>
-                                   
                               </section>
         
                             <?php } ?>
 
                             <?php if ( $one == 'No')   { ?>
-
-                                <section class="page-layout-none">
-                                    <h1 class="page-title-white small">
-                                               <?php  echo $cat_name ?>
+-
+                                <section class="future-page-layout-none">
+                                      <h1 class="page-title-white small">
+                                                <?php $title = get_the_title();  echo esc_html($title); ?>
                                     </h1> 
 
                                 </section>
@@ -54,22 +42,8 @@
 
         <!--Section for pages with two columns-->
          <section class="two-columns">
-                
-                <?php                                   //tex-query for custom taxonomy
-                    $args = array('post_type' => 'treatment-posts',
-                                                 'post_per_page' => -1,    //unlimited posts
-                                                  'tax_query' => array(
-                                                        'relation' => 'OR',
-                                                        array(
-                                                            'taxonomy' => 'treatment-category',
-                                                            'field' => 'slug',
-                                                            'terms' => array($custom_cat),
-                                                            'include_children' => true,
-                                                            'operator' => 'IN'
-                                                        )
-                                                  )
-                                                ); 
                      
+                  <?php $args = array('post_type' => 'future-posts', 'post_per_page' => -1);
                       $loop = new WP_Query( $args );
 
                           if( $loop->have_posts()) :
@@ -97,7 +71,7 @@
 
                                             <div class="img-text-part img" >
 
-                                                        <?php  the_post_thumbnail('large-thumbnail'); ?>
+                                                        <?php  the_post_thumbnail('normal-thumbnail'); ?>
                                             </div> <!--/.  >-->
 
                                             <div class="img-text-part text" >

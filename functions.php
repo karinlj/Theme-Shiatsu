@@ -21,10 +21,7 @@ function sh_style_resourses() {
     
     wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css' );
     
-    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet' );
-    
-    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel="stylesheet');
-    
+    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet' );
 
 }
 add_action('wp_enqueue_scripts', 'sh_style_resourses');
@@ -45,9 +42,9 @@ function sh_theme_setup() {
     //different sizes
     //width, height, hard-or soft cropping(hard)
     add_image_size('small-thumbnail', 200, 160, true);
-   // add_image_size('normal-thumbnail', 260, 340, true); // 320, 420
+    add_image_size('normal-wide-thumbnail', 400, 300, true); // 320, 420
     add_image_size('normal-thumbnail', 300, 300, true);
-    add_image_size('large-thumbnail', 580, 360, true);
+    add_image_size('large-thumbnail', 340, 550, true);
 
 
     add_image_size('banner-image', 920, 510, true);
@@ -80,6 +77,36 @@ add_filter('excerpt_length', 'set_excerpt_length');
 function sh_init_widgets($id) {
     
     
+     /*Three-Image-Box widgets*/
+     register_sidebar(array(
+        'name' => 'Image-Box1',
+        'id'   => 'image-box1',
+        'before_widget' => '<div class="image-box">',
+        'after_widget'  => '</div>'
+    ));  
+     register_sidebar(array(
+        'name' => 'Image-Box2',
+        'id'   => 'image-box2',
+        'before_widget' => '<div class="image-box">',
+        'after_widget'  => '</div>'
+    ));  
+     register_sidebar(array(
+        'name' => 'Image-Box3',
+        'id'   => 'image-box3',
+        'before_widget' => '<div class="image-box">',
+        'after_widget'  => '</div>'
+    ));  
+    
+    /*references widgets*/
+     register_sidebar(array(
+        'name' => 'references',
+        'id'   => 'references',
+        'before_widget' => '<div class="references-box">',
+        'after_widget'  => '</i></div>',
+        'before_title'  => '',
+        'after_title'   => ''
+    ));  
+    
     /*footer widgets*/
      register_sidebar(array(
         'name' => 'footer-links1',
@@ -107,61 +134,22 @@ function sh_init_widgets($id) {
         'after_title'   => '</h4>'
     ));
     
-     register_sidebar(array(
-        'name' => 'Testimonials',
-        'id'   => 'testimonials',
-        'before_widget' => '<div class="slide">',
-        'after_widget'  => '</div>'
-    ));
-    register_sidebar(array(
-        'name' => 'references',
-        'id'   => 'references',
-        'before_widget' => '<div class="references-box">',
-        'after_widget'  => '</i></div>',
-        'before_title'  => '',
-        'after_title'   => ''
-    ));  
-    
-    
-     /*Three-Image-Box widgets*/
-     register_sidebar(array(
-        'name' => 'Image-Box1',
-        'id'   => 'image-box1',
-        'before_widget' => '<div class="image-box">',
-        'after_widget'  => '</div>'
-    ));  
-     register_sidebar(array(
-        'name' => 'Image-Box2',
-        'id'   => 'image-box2',
-        'before_widget' => '<div class="image-box">',
-        'after_widget'  => '</div>'
-    ));  
-     register_sidebar(array(
-        'name' => 'Image-Box3',
-        'id'   => 'image-box3',
-        'before_widget' => '<div class="image-box">',
-        'after_widget'  => '</div>'
-    ));  
-        
-    /*Image-Boxes widgets*/
-     register_sidebar(array(
-        'name' => 'Image-big',
-        'id'   => 'image-big',
-        'before_widget' => '<div class="image-big">',
-        'after_widget'  => '</div>'
-    ));  
-    
-    /*Link-Box widgets*/
+   /*Link-Box widgets*/
      register_sidebar(array(
         'name' => 'Link-Box',
         'id'   => 'link-box',
         'before_widget' => '<div class="link-box">',
         'after_widget'  => '</div>'
     ));  
+       
+    /*Aside-Box widgets*/
+     register_sidebar(array(
+        'name' => 'Aside-Box',
+        'id'   => 'aside-box',
+        'before_widget' => '<div class="aside">',
+        'after_widget'  => '</div>'
+    ));  
     
-     
-    
-     
 }
 add_action('widgets_init', 'sh_init_widgets');
 
@@ -349,6 +337,42 @@ function sh_custom_post_types () {
     );
     register_post_type('about-posts', $args);
     
+     $labels = array(
+        'name' => 'Future Posts',
+        'singular_name' => 'Future Post',
+        'add_new' => 'Add Future Posts Item',
+        'all_items' => 'All Items',
+        'add_new_item' => 'Add Item',
+        'edit_item' => 'Edit Item',
+        'new_item' => 'New Item',
+        'view_item' => 'View Item',
+        'search_item' => 'Search Future Posts',
+        'not_found' => 'No Items Found',
+        'not_found_in_trash' => 'No Items found in trash',
+        'parent_item_colon' => 'Parent Item'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'publicly_queryable' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'hierarchial' => false,
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt',
+            'thumbnail',
+            'revisions'
+        ),
+        //'taxonomies' => array('category', 'post_tag'),
+        'menu_position' => 4,
+        'exclude_from_search' => true 
+    );
+    register_post_type('future-posts', $args);
+    
 }
 add_action('init', 'sh_custom_post_types');
 
@@ -357,7 +381,7 @@ add_action('init', 'sh_custom_post_types');
 //Custom Taxonomies
 function sh_custom_taxonomies () {
     
-//new custom taxonomy hierarchical for video-posts
+//new custom taxonomy hierarchical for treatment-posts
     $labels = array(
         'name' => 'Treatment Categories',
         'singular_name' => 'Treatment Category',

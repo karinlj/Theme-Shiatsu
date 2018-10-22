@@ -20,7 +20,7 @@
                                         </h1>-->
                                         
                                          <h1 class="page-title-white">
-                                                <?php $title = get_the_title();  echo $title; ?>
+                                                <?php $title = get_the_title();  echo esc_html($title); ?>
                                         </h1> 
 
                                    </div>
@@ -31,18 +31,16 @@
                             <?php if ( $one == 'No')   { ?>
 
                                 <section class="page-layout-none">
+                                      <h1 class="page-title-white small">
+                                                <?php $title = get_the_title();  echo esc_html($title); ?>
+                                    </h1> 
 
                                 </section>
                             <?php } ?> 
-        
-        
-        
-    
-     <div class="content-container grey">
-       <div class="container-fluid extra-padding-bottom">
-           <div class="row">
-               <div class="col-md-8 col-md-offset-2 page-main">
-                  
+                
+     <!--Section for pages with one column-->
+         <section class="one-column">
+                     
                 <!--main post loop-->
                 <?php if(have_posts()) : ?>
                     <?php while(have_posts()) : the_post(); ?>
@@ -54,12 +52,8 @@
                 <?php else : ?>
                     <p><?php __('No Posts Found'); ?></p>
                 <?php endif; ?>
-         
-            </div>
-         </div>
-         </div>
-    </div><!-- /.content-container -->
-
+        </section>
+           
     </div><!-- /.custom-container -->
 
     <?php get_footer(); ?>

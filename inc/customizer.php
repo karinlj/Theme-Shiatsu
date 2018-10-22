@@ -127,11 +127,6 @@ function bn_customize_register($wp_customize){
     
     
     
-    
-    
-   
-    
-    
     //Page Layout section
     $wp_customize->add_section('page-layout', array(
                     
@@ -140,18 +135,6 @@ function bn_customize_register($wp_customize){
     ));
     
      
-    //Page Layout: Heading: settings and control
-    $wp_customize->add_setting('page-layout-heading', array(
-        'default'   => _x('Example Headline Text', 'theme-shiatsu'),
-        'type'      => 'theme_mod'
-    ));
-     $wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'page-layout-heading-control', array(
-         'label'    =>__('Heading'),
-         'section'  =>'page-layout',
-        'settings'  => 'page-layout-heading'
-     ))); 
-        
-    
     
     //Page Layout: Display: settings and control
     $wp_customize->add_setting('page-layout-display', array(
@@ -178,6 +161,42 @@ function bn_customize_register($wp_customize){
          //'height'   => 300
      )));
     
+    
+    
+    
+    
+    //Future Page Layout section
+    $wp_customize->add_section('future-page-layout', array(
+                    
+        'title'     => __('Future Page Layout', 'theme-shiatsu'), //Section name and template name
+        'description'   => sprintf(__('Options for Future Page Layout', 'theme-shiatsu'))
+    ));
+    
+    
+    //Future Page Layout: Display: settings and control
+    $wp_customize->add_setting('future-page-layout-display', array(
+        'default'   => _x('No', 'theme-shiatsu')
+    ));
+     $wp_customize->add_control(new WP_Customize_Control( $wp_customize, 'future-page-layout-display-control', array(
+         'label'    =>__('Display Banner Image?'),
+         'section'  =>'future-page-layout',
+        'settings'  => 'future-page-layout-display',
+         'type'     => 'select',
+         'choices'  => array('No' => 'No', 'Yes' => 'Yes')
+     ))); 
+    
+    
+    //Future Page Layout: Image: settings and control
+        $wp_customize->add_setting('future-page-layout-image');
+    
+        //not new WP_Customize_Cropped_Image_Control
+         $wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'future-page-layout-image-control', array(         
+         'label'    =>__('Image'),
+         'section'  =>'future-page-layout',
+         'settings'  => 'future-page-layout-image',
+         //'width'    => 420,
+         //'height'   => 300
+     )));
     
 }
 

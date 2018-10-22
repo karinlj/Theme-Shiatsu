@@ -29,25 +29,19 @@
               background-size: cover;  
           }
           
-       /* @font-face {
-            font-family: 'GeosansLightRegular';
-
-                
-            src: url (<?php echo esc_url (get_template_directory_uri() . '/fonts/geosanslight-webfont.woff') ?>  format('woff') ); 
-
-
-            font-weight: normal;
-            font-style: normal;
-        }*/
+          .future-page-layout-image.banner {
+               background:  
+                  url(<?php echo esc_url( get_theme_mod('future-page-layout-image' )); ?>)  no-repeat center center;
+              
+              background-size: cover; 
+          }
+          
           
       </style>
   </head>
 
   <body <?php body_class(); ?> >
       
-         <!-- Menu-3. Desktop menu with Sub menus, logo and Sign Up button. Mobile menu sliding in from right - covering whole screen. Some jquery for toggle.  Made with Flexbox-->
-
-    
       <div class="content-container-full-width">
      
      
