@@ -1,7 +1,7 @@
 # Theme Shiatsu
 
 ## Description
-Custom WordPress theme for shiatsu massage studio [Shiatsurummet](https://shiatsurummet.se/)
+Custom WordPress theme for Shiatsu massage studio [Shiatsurummet](https://shiatsurummet.se/)
 
 ## Built With
 * WordPress
